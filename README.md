@@ -23,16 +23,10 @@ Of course, the tool itself abstracts as many tasks as is feasible while maintain
 _Make sure you change your working directory to the root of the repository when you use the tool or run the scripts; otherwise, they won't be able to find the scripts and other files they need)._
 1. Clone this branch somewhere onto your machine and `cd` into the repo's root directory:
     1. `cd <working directory>`
-    2. If you are using an SSH key: 
        ```
-       git clone --recurse-submodules git@github.ibm.com:arjunraghavan/peer-nodesdk-test-tool.git
+       git clone https://github.com/arjun-raghavan-00/fabric-peer-operation-tool.git 
        ```
-       If you are using a PAT: 
-       ```
-       export PAT=<your token>
-       git clone --recurse-submodules https://$PAT:x-oauth-basic@github.ibm.com/arjunraghavan/peer-nodesdk-test-tool.git
-       ```
-    3. `cd peer-node-test-tool`
+    3. `cd fabric-peer-operation-tool`
 2. Run `npm install`
 
 Before proceeding, ensure that you have stored your network's connection profile(s) in a folder of your choice.
@@ -66,10 +60,11 @@ If you are using remote peers, you need to download their server certificates an
     
 Before you can use the tool to operate your peers, you need to enroll an admin user and sync it with your network (and, if you are using remote peers, you need to enroll your peer users):
 
-1. Run `./peer-node.sh enroll admin` and make sure to sync the generated `admin` certificate with your network's peers:
-    1. The aforementioned signing cert is created in the `hfc-key-store` folder.
-    2. Open the file named `admin` and copy the certificate inside the quotation marks after the `certificate` field.
-    3. Log in to your network on IBM Blockchain Platform, go to **Network Monitor** > **Members** > **Certificates**, and click **Add Certificate**. Give the certificate any name and paste the certificate copied in Step (ii). Click **Restart** to restart your peers.
+1. If you have a network on IBM Blockchain Platform:
+  1. Run `./peer-node.sh enroll admin` and make sure to sync the generated `admin` certificate with your network's peers:
+      1. The aforementioned signing cert is created in the `hfc-key-store` folder.
+      2. Open the file named `admin` and copy the certificate inside the quotation marks after the `certificate` field.
+      3. Log in to your network on IBM Blockchain Platform, go to **Network Monitor** > **Members** > **Certificates**, and click **Add Certificate**. Give the certificate any name and paste the certificate copied in Step (ii). Click **Restart** to restart your peers.
 2. If you are using remote peers:
     1. Run the command `./peer-node.sh enroll remotepeer`.
     2. Place the `admin` cert on your remote peer. Open a terminal on said peer:
@@ -93,7 +88,7 @@ The script to run to use the tool is `./peer-node.sh`.
 
 Add `-h` or `--help` after any command to view usage instructions (i.e. `./peer-node.sh --help` will show you the available commands and flags for `./peer-node.sh`, `./peer-node.sh chaincode install` will show you the available flags for that command, etc.).
 
-If you want to use the individual Node.js scripts, see the [README file](https://github.ibm.com/arjunraghavan/rempeer-node-test-tool/blob/master/scripts/README.md) inside `./scripts/` for information on usage.
+If you want to use the individual Node.js scripts, see the [README file](https://github.com/arjun-raghavan-00/fabric-peer-operation-tool/blob/master/scripts/README.md) inside `./scripts/` for information on usage.
 
 ## Additional Parameter Information
 
