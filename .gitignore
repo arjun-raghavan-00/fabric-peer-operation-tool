@@ -1,1 +1,9 @@
 *.swp
+.DS_Store
+config
+hfc-key-store
+node_modules
+certs
+*.json
+!package.json
+temp
