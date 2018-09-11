@@ -10,11 +10,6 @@ The tool allows a user to carry out almost all essential tasks related to operat
 - Invoking chaincode to send transactions
 - Query a ledger using chaincode
 
-Features that are currently in development include:
-
-- Specifying more complex endorsement policies
-- Creating a channel
-
 The tool is built using a shell script wrapper around some Node.js scripts, allowing for both easy integration into a larger application as well as fast and straightforward automation of basic peer operation tasks (which might be useful for performance testing), not to mention general usage for an end-user.
 It is completely flexible, allowing the user to manually specify the location of configuration files and certificates.
 Of course, the tool itself abstracts as many tasks as is feasible while maintaining this flexibility; the amount of manual setup a user has to perform is minimized as far as possible.
